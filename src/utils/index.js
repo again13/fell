@@ -1,8 +1,8 @@
-const style = (element, prop) => (typeof getComputedStyle !== 'undefined'
+var style = (element, prop) => (typeof getComputedStyle !== 'undefined'
     ? getComputedStyle(element, null).getPropertyValue(prop)
     : element.style.getPropertyValue(prop));
 
-const overflow = element => style(element, 'overflow') + style(element, 'overflow-y') + style(element, 'overflow-x');
+var overflow = element => style(element, 'overflow') + style(element, 'overflow-y') + style(element, 'overflow-x');
 
 export default element => {
     if (!(element instanceof HTMLElement)) {
